@@ -69,6 +69,27 @@ list1 = [1, 2, 3, 4]
 list2 = [2, 3, 4, 5, 6]
 list3 = [5, 6, 7]
 # Finde heraus welche Liste die längste ist (es können auch mehrere Listen die längsten sein)
+if len(list1) > len(list2) and len(list1) > len(list3):
+	print("list1 ist die längste")
+elif len(list2) > len(list3) and len(list2) > len(list1):
+	print("list2 ist die längste")
+else:
+	print("list3 ist die längste")
+
+
+laengen = [len(list1), len(list2), len(list3)]
+laengen.sort()
+maxLaenge = laengen[-1]
+if len(list1) == maxLaenge:
+	print()
+if len(list2) == maxLaenge:
+	print()
+if len(list3) == maxLaenge:
+	print()
+
 
 # Übung 2
 # Nimm die oberen drei Listen und überprüfe ob eine der Listen eine der drei Zahlen enthält: 3, 7, 10
+gesamt = list1 + list2 + list3
+if 3 in gesamt or 7 in gesamt or 10 in gesamt:
+	print()
