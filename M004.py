@@ -104,9 +104,18 @@ for i in range(10):
 # Übung 2:
 # Schreibe eine Schleife die dir alle Zahlen von 1 bis 200 zur Verfügung stellt
 # Lass dir jede Zahl erst in der kardinalen und dann daneben in der ordinalen Schreibweise darstellen
+# Der Modulo Operator ist hier sehr nützlich
 # Zahl + Endung 'st', 'nd', 'rd' oder 'th'
 # 1st, 2nd, 3rd, 4th, ..., 21st, 22nd, 23rd, 24th
 # Bonus: Berücksichtige alle Zahlen die mit 11, 12 oder 13 enden
+
+for i in range(1, 201):
+	if i % 100 in [11, 12, 13]:
+		print(f"{i}th")
+	elif i % 10 in [1, 2, 3]:
+		print(f"{i}{'st' if i % 10 == 1 else 'nd' if i % 10 == 2 else 'rd'}")
+	else:
+		print(f"{i}th")
 
 # Übung 3:
 # Stoppuhr
