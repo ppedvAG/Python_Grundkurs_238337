@@ -104,15 +104,30 @@ text *= 10
 # Übung 1
 # Lege drei numerische Variablen an, addiere sie zusammen und schreibe das Ergebnis in eine neue Variable
 # Potenziere danach die Variable mit sich selbst und schreibe das Ergebnis erneut in eine Variable
+z1 = 3
+z2 = 8
+z3 = 4
+summe = z1 + z2 + z3
+summe2 = summe ** summe
 
 # Übung 2
 # Nimm die potenzierte Zahl aus Übung 1 und stelle fest ob diese Restlos durch 2 teilbar (gerade) ist
+print(summe2 % 2)
 
 # Übung 3
 # Lege zwei Variablen an: Vorname befüllt mit Max und Nachname befüllt mit Mustermann
 # Verbinde diese zwei Variablen und zähle danach die Buchstaben 'M' und 'm'
 # Das Ergebnis soll 3 sein
+vorname = "Max"
+nachname = "Mustermann"
+vollerName = vorname + nachname
+print(vollerName.count("M") + vollerName.count("m"))
+print(vollerName.lower().count("m"))
 
 # Übung 4
 # Schreibe deinen Vornamen ohne Großbuchstaben in eine Variable
 # Verwende danach diese Variable, und gib diese mit dem ersten Buchstaben groß geschrieben aus
+name = "lukas"
+print(name[0].upper() + name[1:].lower())
+print(name.capitalize())
+print(name.title())
