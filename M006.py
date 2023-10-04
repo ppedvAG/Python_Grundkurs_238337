@@ -113,3 +113,39 @@ for s1, s2, s3 in tabelle:
 
 for s1, *s2 in tabelle:
 	print(f"Die Zahl ist: {s1}, die Zahl hoch 2 ist {s2}, die Zahl hoch sich selbst ist {s2[1]}")
+
+# Arbitrary Keyword Arguments
+# Gibt die Möglichkeit, beliebig viele benannte Argumente zu übergeben
+# Werden in Python internen Funktionen als **kwargs bezeichnet
+# Innerhalb der Funktion wird dieser Parameter als Dictionary gesehen
+def printTeilnehmer(**teilnehmer):
+	for k, v in teilnehmer.items():
+		print(f"Teilnehmer {k} namens {v} nimmt an dem Kurs teil")
+
+printTeilnehmer(T1="Josef", T2="Markus", Trainer="Lukas")
+
+printTeilnehmer(**meinCar)  # Dictionary entpacken
+
+
+# Übung 1:
+# Wir wollen eine Funktion erstellen, die beliebig viele Zahlen als Parameter erhalten kann
+# Und uns die größte dieser Zahlen zurückgibt
+
+# Übung 2:
+# Wir wollen eine Funktion erstellen, die einen String als Parameter erhält
+# Die Funktion soll dann in der Konsole ausgeben, aus wie vielen Klein- und Großbuchstaben der String besteht
+# Die Funktion soll zusätzlich zählen wie viele Sonderzeichen (Nummern inkludiert) enthalten sind und das ebenfalls ausgeben
+# Sonderzeichen: 4 | Groß: 3 | Klein: 12
+
+# Übung 3
+# Schreibe eine Funktion, die eine Liste von Strings als Parameter empfängt
+# Diese Funktion soll die Strings als eine Aufzählung zusammenbauen und am Ende zurück geben
+# Beispiele:
+# Parameter: []
+# Keine Parameter angegeben
+# Parameter: ["Teilnehmer"]
+# Teilnehmer
+# Parameter: ["Teilnehmer1", "Teilnehmer2"]
+# Teilnehmer1 und Teilnehmer2
+# Parameter: ["Teilnehmer1", "Teilnehmer2", "Teilnehmer3", "Teilnehmer4"]
+# Teilnehmer1, Teilnehmer2, Teilnehmer3 und Teilnehmer4
