@@ -38,7 +38,7 @@ finally:  # Wird immer ausgeführt, auch wenn kein Fehler auftritt
 # Übung 1
 # Erstelle ein Programm, das den User nach zwei Integern fragt
 # Falls der User zwei Integer eingibt sollen diese addiert und das Ergebnis in der Konsole ausgegeben werden und das Programm kann beendet werden
-# Falls der Benutzer einen falschen Typen eingibt soll das Programm ihn darauf hinweisen, dass nur Integer akzeptiert werden und ihn erneut nach den Zahlen fragen
+# Falls der Benutzer einen falschen Typen eingibt soll das Programm ihn darauf hinweisen, das nur Integer akzeptiert werden und ihn erneut nach den Zahlen fragen
 
 # Übung 2
 # Definiere eine beliebige Liste
