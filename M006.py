@@ -130,12 +130,30 @@ printTeilnehmer(**meinCar)  # Dictionary entpacken
 # Übung 1:
 # Wir wollen eine Funktion erstellen, die beliebig viele Zahlen als Parameter erhalten kann
 # Und uns die größte dieser Zahlen zurückgibt
+def max(*numbers):
+	x = numbers[0]  # numbers[0] um auch ausschließlich negative Zahlen zu beachten max(-1, -2, -3, -4)
+	for i in numbers:
+		if i > x:
+			x = i
+	return x
 
 # Übung 2:
 # Wir wollen eine Funktion erstellen, die einen String als Parameter erhält
 # Die Funktion soll dann in der Konsole ausgeben, aus wie vielen Klein- und Großbuchstaben der String besteht
 # Die Funktion soll zusätzlich zählen wie viele Sonderzeichen (Nummern inkludiert) enthalten sind und das ebenfalls ausgeben
 # Sonderzeichen: 4 | Groß: 3 | Klein: 12
+def countCase(text: str):
+	lower, upper, sonder = 0, 0, 0
+	for buchstabe in text:
+		if buchstabe.islower():
+			lower += 1
+		elif buchstabe.isupper():
+			upper += 1
+		else:
+			sonder += 1
+	print(f"Groß: {upper}, Klein: {lower}, Sonderzeichen: {sonder}")
+
+countCase("Das ist ein Text")
 
 # Übung 3
 # Schreibe eine Funktion, die eine Liste von Strings als Parameter empfängt
@@ -149,3 +167,54 @@ printTeilnehmer(**meinCar)  # Dictionary entpacken
 # Teilnehmer1 und Teilnehmer2
 # Parameter: ["Teilnehmer1", "Teilnehmer2", "Teilnehmer3", "Teilnehmer4"]
 # Teilnehmer1, Teilnehmer2, Teilnehmer3 und Teilnehmer4
+def listTeilnehmer(*teilnehmer: str):
+	if len(teilnehmer) == 0:
+		print("Keine Teilnehmer")
+	elif len(teilnehmer) == 1:
+		print(teilnehmer[0])
+	elif len(teilnehmer) == 2:
+		print(f"{teilnehmer[0]} und {teilnehmer[1]}")
+	else:
+		gesamt = ""
+		z = 1
+		for tn in teilnehmer:
+			if len(teilnehmer) == z:
+				gesamt += f" und {tn}"
+			else:
+				gesamt += f"{tn}, "
+			z += 1
+		print(gesamt)
+
+
+# Optimierung 1
+def listTeilnehmer2(*teilnehmer: str):
+	if len(teilnehmer) == 0:
+		print("Keine Teilnehmer")
+	elif len(teilnehmer) == 1:
+		print(teilnehmer[0])
+	elif len(teilnehmer) == 2:
+		print(f"{teilnehmer[0]} und {teilnehmer[1]}")
+	else:
+		gesamt = ""
+		for i in range(len(teilnehmer) - 1):
+			if len(teilnehmer) - 1 == i:
+				gesamt += f" und {teilnehmer[i]}"
+			else:
+				gesamt += f"{teilnehmer[i]}, "
+		print(gesamt)
+
+
+# Optimierung 2
+def listTeilnehmer3(*teilnehmer: str):
+	if len(teilnehmer) == 0:
+		print("Keine Teilnehmer")
+
+	gesamt = ""
+	for i in range(len(teilnehmer) - 1):
+		if len(teilnehmer) - 1 == i:
+			gesamt += " und "
+		else:
+			gesamt += ", "
+
+		gesamt += teilnehmer[i]
+	print(gesamt.rstrip(" und "))
