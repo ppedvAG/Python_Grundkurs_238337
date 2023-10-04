@@ -48,3 +48,18 @@ import os
 os.path.join("Test", "Test.txt")  # Betriebssystemunabhängig Pfade verknüpfen
 os.path.exists("")  # Existiert ein File/Ordner?
 os.mkdir("Test")  # Ordner erstellen
+
+# Übung 1:
+# Funktion die dem User die Möglichkeiten (w, r, a) gibt
+# User soll eine davon auswählen über input()
+# Wenn der User keine valide Möglichkeit eingibt, soll die Eingabe wiederholt werden
+# Bei w oder a soll ein File geöffnet werden und eine Erfolgsmeldung in das File geschrieben werden
+# Bei r soll das File ausgelesen werden und der Inhalt in die Konsole geschrieben werden
+
+# Übung 2:
+# Erstelle ein Programm, das zwei Integer oder Floats abfragt
+# Gib dem Nutzer die Möglichkeit per Tastendruck zwischen Addition, Subtraktion, Multiplikation und Division zu wählen.
+# -> Zahl zwischen 1 und 4 -> Rechenoperation auswählen
+# Bei Ungültiger Eingabe soll der Benutzer erneut nach seiner Entscheidung gefragt werden.
+# Lasse das Ergebnis inklusive der Rechnung in der Konsole ausgeben
+# Frage nach Ende der Operation ob der Benutzer eine neue Rechnung (Wiederholen) durchführen will
