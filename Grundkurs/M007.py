@@ -65,7 +65,6 @@ np.round(5.5)
 
 # __init__.py
 # Wird ausgeführt, wenn das Paket importiert wird
-import InitTest  # Paket importiert
 
 
 def main():
